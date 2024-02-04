@@ -1,9 +1,9 @@
 package com.example.SpringMVC.Controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class mvcController {
@@ -15,11 +15,9 @@ public class mvcController {
     }
 
     @RequestMapping("/add")
-    public ModelAndView add(@RequestParam("num1") int a, @RequestParam("num2") int b) {
-        ModelAndView mv = new ModelAndView();
-        mv.setViewName("result");
+    public String add(@RequestParam("num1") int a, @RequestParam("num2") int b, ModelMap model) {
         int res = a + b;
-        mv.addObject("result", res);
-        return mv;
+        model.addAttribute("result", res);
+        return "result";
     }
 }
