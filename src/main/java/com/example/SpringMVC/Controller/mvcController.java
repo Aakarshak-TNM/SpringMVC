@@ -4,6 +4,7 @@ import com.example.SpringMVC.Entity.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -20,11 +21,7 @@ public class mvcController {
     }
 
     @RequestMapping("/add")
-    public String add(@RequestParam("id") int id, @RequestParam("name") String name, Model model, Student student) {
-
-        student.setName(name);
-        student.setId(id);
-        model.addAttribute("result", student);
+    public String add(Model model, @ModelAttribute("s") Student student) {
         return "result";
 //        Want to add simple object go for model otherwise for a Map go for ModelMap
     }
