@@ -5,6 +5,7 @@ import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class mvcController {
@@ -16,10 +17,11 @@ public class mvcController {
     }
 
     @RequestMapping("/add")
-    public String add(@RequestParam("num1") int a, @RequestParam("num2") int b, HttpSession session) {
+    public ModelAndView add(@RequestParam("num1") int a, @RequestParam("num2") int b) {
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("result.jsp");
         int res = a + b;
-//Another method
-        session.setAttribute("result", res);
-        return "result.jsp";
+        mv.addObject("result", res);
+        return mv;f
     }
 }
