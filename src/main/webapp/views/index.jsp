@@ -10,12 +10,12 @@
     <h1>Hello, world!</h1>
     <form action="add">
     <div class="m-3">
-         <label class="form-label">First Number:-</label>
-         <input type="text" class="form-control" name="num1">
+         <label class="form-label">Id:-</label>
+         <input type="text" class="form-control" name="id">
     </div>
     <div class="m-3">
-         <label class="form-label">Second Number:-</label>
-         <input type="text" class="form-control" name="num2">
+         <label class="form-label">Name:-</label>
+         <input type="text" class="form-control" name="name">
     </div>
     <div class="m-3">
     <button type="submit" class="btn btn-primary">Submit</button>
